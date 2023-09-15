@@ -8,6 +8,29 @@ module.exports = {
     './src/**/*.{ts,tsx}',
   ],
   theme: {
+    fontFamily: {
+      sans: 'var(--font-barlow)',
+      display: 'var(--font-syne)',
+    },
+
+    colors: {
+      lime: '#D8FF4A',
+      'soft-lime': '#AAF39E',
+      'soft-violet': '#C79FFA',
+      'pale-yellow': '#FFFBEA',
+      gray: '#F1F1F1',
+      'dark-gray': '#3C3C3C',
+      white: '#FFF',
+      black: '#000',
+      transparent: 'transparent',
+    },
+
+    boxShadow: {
+      md: '5px 5px 0 0 #000',
+      lg: '10px 10px 0 0 #000',
+    },
+
+    // SHADCN/UI
     container: {
       center: true,
       padding: '2rem',

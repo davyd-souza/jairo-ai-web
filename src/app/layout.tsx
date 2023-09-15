@@ -1,11 +1,21 @@
 // ASSET
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Barlow, Syne } from 'next/font/google'
 
 // TYPE
 import type { Metadata } from 'next'
 
-const inter = Inter({ subsets: ['latin'] })
+const barlow = Barlow({
+  weight: ['400', '500'],
+  subsets: ['latin'],
+  variable: '--font-barlow',
+})
+
+const syne = Syne({
+  weight: ['700', '800'],
+  subsets: ['latin'],
+  variable: '--font-syne',
+})
 
 export const metadata: Metadata = {
   title: 'Jairo AI',
@@ -20,7 +30,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-zinc-900 text-zinc-50`}>
+      <body
+        className={`${barlow.variable} ${syne.variable} bg-pale-yellow font-sans text-black`}
+      >
         {children}
       </body>
     </html>
