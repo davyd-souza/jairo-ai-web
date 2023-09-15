@@ -32,6 +32,14 @@ module.exports = {
 
     // SHADCN/UI
     extend: {
+      gridTemplateColumns: {
+        main: '1fr clamp(12rem, 20vw + 1rem, 30rem)',
+      },
+
+      gridTemplateRows: {
+        root: 'max-content 1fr',
+      },
+
       minHeight: {
         screen: '100dvh',
       },

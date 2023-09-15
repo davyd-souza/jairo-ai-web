@@ -11,7 +11,7 @@ export function Header() {
   return (
     <header className="flex items-center justify-between border-3 border-black bg-white px-4">
       <h1 className="font-display text-lg font-extrabold sm:text-2xl">
-        jairo.ia
+        jairo.ai
       </h1>
 
       <div>

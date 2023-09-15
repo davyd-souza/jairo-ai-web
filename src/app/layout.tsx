@@ -18,7 +18,7 @@ const syne = Syne({
 })
 
 export const metadata: Metadata = {
-  title: 'Jairo IA',
+  title: 'Jairo AI',
   description:
     'Experience the power of artificial intelligence on our platform, where it transforms videos into valuable textual content. Let our AI intelligently generate descriptions, ideas, and titles, providing an innovative way to maximize the potential of your videos.',
 }
