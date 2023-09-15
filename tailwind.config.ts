@@ -31,14 +31,15 @@ module.exports = {
     },
 
     // SHADCN/UI
-    container: {
-      center: true,
-      padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
-    },
     extend: {
+      minHeight: {
+        screen: '100dvh',
+      },
+
+      borderWidth: {
+        3: '3px',
+      },
+
       keyframes: {
         'accordion-down': {
           from: { height: 0 },
