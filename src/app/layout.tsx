@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${barlow.variable} ${syne.variable} bg-pale-yellow font-sans text-black`}
+        className={`${barlow.variable} ${syne.variable} bg-pale-yellow font-sans text-sm text-black md:text-base`}
       >
         {children}
       </body>

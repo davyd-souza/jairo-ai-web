@@ -26,6 +26,7 @@ module.exports = {
     },
 
     boxShadow: {
+      sm: '2px 2px 0 0 #000',
       md: '5px 5px 0 0 #000',
       lg: '10px 10px 0 0 #000',
     },
@@ -33,7 +34,7 @@ module.exports = {
     // SHADCN/UI
     extend: {
       gridTemplateColumns: {
-        main: '1fr clamp(12rem, 20vw + 1rem, 30rem)',
+        main: '1fr clamp(16rem, 20vw + 1rem, 25rem)',
       },
 
       gridTemplateRows: {

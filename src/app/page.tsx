@@ -1,13 +1,14 @@
 // COMPONENT
 import { Header } from '@/components/header'
+import { Sidebar } from '@/components/sidebar'
 import { Textarea } from '@/components/ui/textarea'
 
 export default function Home() {
   return (
-    <div className="grid-rows-root grid min-h-screen gap-4 pb-4">
+    <div className="grid min-h-screen grid-rows-root gap-4 pb-4">
       <Header />
 
-      <main className="md:grid-cols-main grid px-4 md:gap-8">
+      <main className="grid px-4 md:grid-cols-main md:gap-8">
         <section className="grid gap-4 md:gap-8">
           <Textarea
             placeholder="Include AI prompt here..."
@@ -19,7 +20,7 @@ export default function Home() {
           />
         </section>
 
-        <aside className="hidden bg-white md:block">aside</aside>
+        <Sidebar />
       </main>
     </div>
   )
