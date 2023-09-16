@@ -20,7 +20,7 @@ export default function Home() {
           />
         </section>
 
-        <Sidebar />
+        <Sidebar className="hidden md:grid md:gap-4" />
       </main>
     </div>
   )

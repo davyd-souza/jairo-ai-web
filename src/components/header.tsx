@@ -6,6 +6,8 @@ import { GithubIcon, Menu } from 'lucide-react'
 
 // COMPONENT
 import { Button } from '@/components/ui/button'
+import { Sidebar } from '@/components/sidebar'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 export function Header() {
   return (
@@ -21,9 +23,17 @@ export function Header() {
             <span className="sr-only md:not-sr-only">GitHub</span>
           </Link>
         </Button>
-        <Button className="px-6 py-4 sm:px-8 md:hidden" variant="flat">
-          <Menu className="h-5 w-5 sm:h-8 sm:w-8" />
-        </Button>
+
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button className="px-6 py-4 sm:px-8 md:hidden" variant="flat">
+              <Menu className="h-5 w-5 sm:h-8 sm:w-8" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent className="w-full">
+            <Sidebar className="grid h-full gap-4 py-6" />
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   )

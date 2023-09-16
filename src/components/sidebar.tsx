@@ -21,10 +21,16 @@ import {
 
 // ASSET
 import { FileVideo2, Info, Upload, Wand2 } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
-export function Sidebar() {
+// TYPE
+type SidebarProps = {
+  className?: string
+}
+
+export function Sidebar({ className }: SidebarProps) {
   return (
-    <aside className="hidden border-3 border-black bg-white py-4 md:grid md:gap-4">
+    <aside className={cn('border-3 border-black bg-white py-4', className)}>
       <form className="px-4 text-dark-gray" id="select-video">
         <input
           type="file"
