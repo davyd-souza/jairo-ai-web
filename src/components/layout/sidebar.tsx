@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import { Slider } from '@/components/ui/slider'
-import { Textarea } from '@/components/ui/textarea'
 import {
   Select,
   SelectContent,
@@ -18,9 +17,12 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { VideoInputForm } from '@/components/video-input-form'
 
 // ASSET
-import { FileVideo2, Info, Upload, Wand2 } from 'lucide-react'
+import { Info, Wand2 } from 'lucide-react'
+
+// LIB
 import { cn } from '@/lib/utils'
 
 // TYPE
@@ -31,41 +33,7 @@ type SidebarProps = {
 export function Sidebar({ className }: SidebarProps) {
   return (
     <aside className={cn('border-3 border-black bg-white py-4', className)}>
-      <form className="px-4 text-dark-gray" id="select-video">
-        <input
-          type="file"
-          id="video"
-          accept="video/  mp4"
-          className="peer/input sr-only"
-        />
-        <label
-          htmlFor="video"
-          className="flex aspect-video flex-col items-center justify-center gap-1 border-2 border-dashed border-black font-medium transition-colors hover:cursor-pointer hover:bg-gray peer-focus-visible/input:bg-gray"
-        >
-          <FileVideo2 />
-          Select a video
-        </label>
-      </form>
-
-      <Separator />
-
-      <article className="space-y-3 px-4">
-        <div className="space-y-2">
-          <Label htmlFor="transcription-prompt">Transcription prompt</Label>
-          <Textarea
-            id="transcription-prompt"
-            form="select-video"
-            placeholder="Include key words mentioned on video separated by comma (,)"
-            className="resize-none bg-gray shadow-md placeholder:text-sm"
-          />
-        </div>
-
-        <Button className="w-full" form="select-video" type="submit">
-          Load video
-          <Upload className="h-5 w-5 sm:h-6 sm:w-6" />
-        </Button>
-      </article>
-
+      <VideoInputForm />
       <Separator />
 
       <form className="space-y-4" id="generate-response">

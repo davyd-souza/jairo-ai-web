@@ -1,6 +1,6 @@
 // COMPONENT
-import { Header } from '@/components/header'
-import { Sidebar } from '@/components/sidebar'
+import { Header } from '@/components/layout/header'
+import { Sidebar } from '@/components/layout/sidebar'
 import { Textarea } from '@/components/ui/textarea'
 
 export default function Home() {

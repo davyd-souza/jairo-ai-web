@@ -6,7 +6,7 @@ import { GithubIcon, Menu } from 'lucide-react'
 
 // COMPONENT
 import { Button } from '@/components/ui/button'
-import { Sidebar } from '@/components/sidebar'
+import { Sidebar } from '@/components/layout/sidebar'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 export function Header() {
