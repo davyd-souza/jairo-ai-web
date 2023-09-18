@@ -11,7 +11,10 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 export function Header() {
   return (
-    <header className="flex items-center justify-between border-3 border-black bg-white px-4">
+    <header
+      id="header"
+      className="relative flex items-center justify-between border-3 border-black bg-white px-4"
+    >
       <h1 className="font-display text-lg font-extrabold sm:text-2xl">
         jairo.ai
       </h1>
