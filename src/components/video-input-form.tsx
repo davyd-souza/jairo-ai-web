@@ -13,6 +13,7 @@ import {
 import { fetchFile } from '@ffmpeg/util'
 import { createPortal } from 'react-dom'
 import path from 'path'
+import { useAi } from '@/hooks/useAi'
 
 // COMPONENT
 import { Separator } from '@/components/ui/separator'
@@ -66,6 +67,8 @@ export function VideoInputForm() {
   const [status, setStatus] = useState<Status>('waiting')
   const [progress, setProgress] = useState<number | null>(null)
 
+  const { handleGetVideoId } = useAi()
+
   const headerElementRef = useRef<Element | null>(null)
   const promptTextareaRef = useRef<HTMLTextAreaElement | null>(null)
 
@@ -102,9 +105,9 @@ export function VideoInputForm() {
 
     setStatus('uploading')
 
-    const response = await api.post('/videos', data)
-
     // return
+
+    const response = await api.post('/videos', data)
 
     const videoId = response.data.video.id
 
@@ -114,6 +117,8 @@ export function VideoInputForm() {
       prompt,
     })
 
+    setStatus('success')
+    handleGetVideoId(videoId)
     console.log('Finished')
   }
 
