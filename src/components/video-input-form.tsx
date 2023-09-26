@@ -105,17 +105,28 @@ export function VideoInputForm() {
 
     setStatus('uploading')
 
+    const response = await api.post('/videos', data, {
+      headers: {
+        'Content-Type': 'multipart/form-data; boundary=',
+      },
+    })
     // return
-
-    const response = await api.post('/videos', data)
 
     const videoId = response.data.video.id
 
     setStatus('generating')
 
-    await api.post(`/videos/${videoId}/transcription`, {
-      prompt,
-    })
+    await api.post(
+      `/videos/${videoId}/transcription`,
+      {
+        prompt,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    )
 
     setStatus('success')
     handleGetVideoId(videoId)
