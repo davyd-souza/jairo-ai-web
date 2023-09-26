@@ -50,7 +50,7 @@ export function AiContextProvider({ children }: { children: ReactNode }) {
     completion,
     isLoading,
   } = useCompletion({
-    api: 'http://localhost:3333/ai/response',
+    api: `${process.env.NEXT_API_URL}/ai/response`,
     body: {
       videoId,
       temperature,
