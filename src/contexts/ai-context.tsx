@@ -50,7 +50,7 @@ export function AiContextProvider({ children }: { children: ReactNode }) {
     completion,
     isLoading,
   } = useCompletion({
-    api: `${process.env.NEXT_API_URL}/ai/response`,
+    api: `${process.env.NEXT_PUBLIC_API_URL}/ai/response`,
     body: {
       videoId,
       temperature,
@@ -79,9 +79,13 @@ export function AiContextProvider({ children }: { children: ReactNode }) {
   }
 
   useEffect(() => {
-    api.get<Prompt[]>('/prompts').then(({ data }) => {
-      setPrompt(data)
-    })
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/prompts`)
+      .then((response) => response.json())
+      .then((data) => setPrompt(data))
+
+    // api.get<Prompt[]>('/prompts').then(({ data }) => {
+    //   setPrompt(data)
+    // })
   }, [])
 
   return (
